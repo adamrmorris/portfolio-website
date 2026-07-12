@@ -162,7 +162,7 @@ img {
    Header block (Figma "Header")
    -------------------------------------------------------------------------- */
 .page-header {
-  height: 432px;
+  min-height: 432px;
   display: flex;
   align-items: flex-end;
   padding: 0 0 0 0;
@@ -188,9 +188,9 @@ img {
   margin: 0;
   font-family: "Zalando Sans Expanded", var(--font-sans);
   font-weight: 700;
-  font-size: 52px;
-  line-height: 52px;
-  letter-spacing: -1.04px;
+  font-size: clamp(2rem, 1rem + 4vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   color: var(--color-text);
 }
 
@@ -211,9 +211,9 @@ img {
   width: 100%;
   font-family: "Zalando Sans Expanded", var(--font-sans);
   font-weight: 300;
-  font-size: 44px;
-  line-height: 52px;
-  letter-spacing: -0.88px;
+  font-size: clamp(1.5rem, 0.9rem + 3vw, 2.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--color-text);
 }
 
