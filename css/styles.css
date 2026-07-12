@@ -1,0 +1,744 @@
+/* --------------------------------------------------------------------------
+   Design tokens
+   -------------------------------------------------------------------------- */
+:root {
+  --color-bg: #ffffff;
+  --color-bg-elevated: #ffffff;
+  --color-text: #2f2f2f;
+  --color-text-muted: #595959;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-border: #e2e8f0;
+  --color-hero-bg: #ffffff;
+  --color-hero-text: #2f2f2f;
+  --color-hero-muted: #595959;
+  --color-red: #ff2919;
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --max-content: 42rem;
+  --page-width: 1440px;
+  --page-gutter: 16px;
+  --content-width: 1408px;
+
+  --nav-height: 106px;
+  --nav-rule-height: 3px;
+  --nav-pad-x: 16px;
+  --nav-link-gap: 40px;
+  --nav-link-color: #595959;
+  --nav-rule-color: var(--color-red);
+
+  --transition-fast: 150ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+main {
+  padding-top: var(--nav-height);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility
+   -------------------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  font-weight: 600;
+  color: var(--color-hero-bg);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  clip: auto;
+  clip-path: none;
+  width: auto;
+  height: auto;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.button:focus-visible {
+  outline-offset: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Page layout
+   -------------------------------------------------------------------------- */
+.page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 var(--nav-pad-x);
+}
+
+.page__top {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.rule {
+  width: 100%;
+  background: var(--color-border);
+}
+
+.rule--thin {
+  height: 1px;
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Header block (Figma "Header")
+   -------------------------------------------------------------------------- */
+.page-header {
+  height: 432px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 0 0;
+  margin-top: 0;
+}
+
+.page-header__inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-bottom: 0;
+}
+
+.page-header__titleblock {
+  width: 694px;
+  max-width: 100%;
+}
+
+.page-header__name {
+  margin: 0;
+  font-family: "Zalando Sans Expanded", var(--font-sans);
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 52px;
+  letter-spacing: -1.04px;
+  color: var(--color-text);
+}
+
+.page-header__label {
+  margin: 0;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.page-header__headline {
+  margin: 0;
+  width: 100%;
+  font-family: "Zalando Sans Expanded", var(--font-sans);
+  font-weight: 300;
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: -0.88px;
+  color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Sections
+   -------------------------------------------------------------------------- */
+.page-section {
+  margin-top: 38px;
+}
+
+.page-section__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.page-section__kicker {
+  margin: 0;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.7px;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Work teasers
+   -------------------------------------------------------------------------- */
+.teaser {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.teaser__body {
+  width: 459px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.teaser__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.teaser__fly {
+  margin: 0;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.7px;
+  color: var(--color-red);
+}
+
+.teaser-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+}
+
+.teaser-heading__title {
+  margin: 0;
+  font-family: "Zalando Sans Expanded", var(--font-sans);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: var(--color-text);
+}
+
+.teaser-heading__sub {
+  margin: 0;
+  font-family: "Libre Baskerville", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.56px;
+  color: var(--color-text-muted);
+}
+
+.teaser__desc {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+.teaser__year {
+  margin: 0;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.7px;
+  color: var(--color-text-muted);
+}
+
+.teaser__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  height: 44px;
+  padding: 12px;
+  border-radius: 2px;
+  background: var(--color-text);
+  color: #fff;
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.7px;
+}
+
+.teaser__cta:hover {
+  background: var(--color-text-muted);
+}
+
+.teaser__media {
+  width: 933px;
+  height: 525px;
+  flex: 1 1 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.teaser__media--pad32 {
+  padding: 32px;
+}
+
+.teaser__media--pad32 .teaser__img {
+  border-radius: 4px;
+}
+
+.teaser__media--red {
+  background: #d03223;
+  display: grid;
+  place-items: center;
+}
+
+.teaser__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.teaser__btn {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.teaser__btn img {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.teaser__pager {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.teaser__pager img {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   About / contact
+   -------------------------------------------------------------------------- */
+.about {
+  display: grid;
+  grid-template-columns: 696px 103px 577px;
+  gap: 16px;
+  align-items: start;
+}
+
+.about__spacer {
+  height: 432px;
+}
+
+.about__text {
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+.about__text p {
+  margin: 0 0 24px;
+}
+
+.about__text p:last-child {
+  margin-bottom: 0;
+}
+
+.about__jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.job {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.job__company {
+  width: 221px;
+  flex: 0 0 auto;
+}
+
+.job__org {
+  margin: 0;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.7px;
+  color: var(--color-red);
+  text-transform: uppercase;
+}
+
+.job__dates {
+  margin: 0;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-muted);
+}
+
+.job__roles {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.role {
+  display: flex;
+  flex-direction: column;
+}
+
+.role__title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text);
+}
+
+.role__dates {
+  margin: 0;
+  font-family: "Libre Baskerville", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-muted);
+}
+
+.teaser__overlay {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  width: 260px;
+  height: auto;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Events list teasers (Figma "EVENTS AND INTERVIEWS") */
+.list-teaser {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.list-teaser__body {
+  width: 1052px;
+  flex: 1 1 auto;
+  padding-top: 18px;
+}
+
+.list-teaser__media {
+  width: 340px;
+  height: 191px;
+  flex: 0 0 auto;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.list-teaser__media--black {
+  background: #000;
+}
+
+.list-teaser__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.list-teaser__img--contain {
+  object-fit: contain;
+}
+
+.list-teaser__media--stack2 .stack__top {
+  position: absolute;
+  inset: 0;
+  transform: scale(2.07) translate(-0.8%, -17.6%);
+  transform-origin: center;
+  object-fit: cover;
+}
+
+.list-teaser__media--stack3 .stack__top {
+  position: absolute;
+  inset: 0;
+  transform: scale(2.07) translate(-0.8%, -17.6%);
+  transform-origin: center;
+  object-fit: cover;
+}
+
+.list-teaser__media--stack3 .stack__top2 {
+  position: absolute;
+  inset: 0;
+  transform: scale(1.09) translate(-2.9%, -8.4%);
+  transform-origin: center;
+  object-fit: cover;
+}
+
+.contact-links {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.contact-links a {
+  display: block;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation */
+.site-nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  background: #ffffff;
+}
+
+.site-nav__rule {
+  height: var(--nav-rule-height);
+  background: var(--nav-rule-color);
+  width: 100%;
+}
+
+.site-nav__spacer {
+  height: 8px;
+  width: 100%;
+}
+
+.site-nav__bottom-rule {
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.site-nav.is-scrolled .site-nav__bottom-rule {
+  opacity: 1;
+}
+
+.site-nav__masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(var(--nav-height) - var(--nav-rule-height) - 16px);
+  padding: 0 var(--nav-pad-x);
+}
+
+.site-nav__logo {
+  display: block;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 auto;
+}
+
+.site-nav__logo img {
+  display: block;
+  width: 72px;
+  height: 72px;
+}
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--nav-link-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.7px;
+  color: var(--nav-link-color);
+}
+
+.site-nav__links a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.site-nav__links a:hover {
+  color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .site-nav__masthead {
+    padding: 0 var(--space-4);
+  }
+
+  .site-nav__links {
+    gap: 20px;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+  }
+
+  .page {
+    padding: 0 var(--space-4);
+  }
+
+  .teaser {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .teaser__body {
+    width: 100%;
+  }
+
+  .teaser__media {
+    width: 100%;
+    height: 320px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about__spacer {
+    display: none;
+  }
+
+  .job {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .job__company,
+  .job__roles {
+    width: 100%;
+  }
+
+  .list-teaser {
+    flex-direction: column;
+  }
+
+  .list-teaser__body {
+    width: 100%;
+  }
+
+  .list-teaser__media {
+    width: 100%;
+  }
+}

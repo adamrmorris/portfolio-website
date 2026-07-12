@@ -1,0 +1,5 @@
+# Optional: connect this repo/folder at https://app.netlify.com
+# Publish directory is the project root (static HTML).
+
+[build]
+  publish = "."

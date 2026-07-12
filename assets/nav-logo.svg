@@ -1,0 +1,23 @@
+<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="72" height="72" fill="#F5F5F5"/>
+<g id="Desktop - 5">
+<rect width="1440" height="5917" transform="translate(-16 -18)" fill="white"/>
+<g id="Navigation">
+<g id="Masthead">
+<g id="logo">
+<path id="outline" d="M70.2 36C70.2 17.1119 54.8881 1.8 36 1.8C17.1119 1.8 1.8 17.1119 1.8 36C1.8 54.8881 17.1119 70.2 36 70.2V72C16.1177 72 0 55.8822 0 36C0 16.1177 16.1177 0 36 0C55.8822 0 72 16.1177 72 36C72 55.8822 55.8822 72 36 72V70.2C54.8881 70.2 70.2 54.8881 70.2 36Z" fill="#FF2919"/>
+<g id="Inside">
+<mask id="mask0_8_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+<path id="Ellipse 3 (Stroke)" d="M0 36C0 55.8822 16.1177 72 36 72C55.8822 72 72 55.8822 72 36C72 16.1177 55.8822 0 36 0C16.1177 0 0 16.1177 0 36Z" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_8_2)">
+<rect id="Rectangle 9" x="21" y="34.5" width="7.8" height="1.8" fill="#FF2919"/>
+<path id="Subtract" d="M35.9999 33.542L34.9874 35.5069L24.8999 15.9299L6.28818 52.05H12.2999V53.85H3.33594L24.8999 12L35.9999 33.542Z" fill="#FF2919"/>
+<path id="Subtract_2" d="M59.7001 53.85H68.6641L67.981 52.5244L47.1001 12L25.5361 53.85H27.5881L28.4884 52.05L47.1001 15.9299L65.7118 52.05H59.7001V53.85Z" fill="#FF2919"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
