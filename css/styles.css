@@ -747,6 +747,10 @@ img {
     align-items: flex-start;
   }
 
+  .job:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
   .job__company,
   .job__roles {
     flex: 0 0 auto;
