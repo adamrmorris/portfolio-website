@@ -43,6 +43,16 @@
   --nav-rule-color: var(--color-red);
 
   --transition-fast: 150ms ease;
+
+  --hero-name-size: 52px;
+  --hero-name-line: 52px;
+  --hero-name-size-sm: 44px;
+  --hero-name-line-sm: 44px;
+
+  --hero-headline-size: 44px;
+  --hero-headline-line: 52px;
+  --hero-headline-size-sm: 28px;
+  --hero-headline-line-sm: 32px;
 }
 
 *,
@@ -188,8 +198,8 @@ img {
   margin: 0;
   font-family: "Zalando Sans Expanded", var(--font-sans);
   font-weight: 700;
-  font-size: clamp(2rem, 1rem + 4vw, 3.25rem);
-  line-height: 1.05;
+  font-size: var(--hero-name-size);
+  line-height: var(--hero-name-line);
   letter-spacing: -0.02em;
   color: var(--color-text);
 }
@@ -211,8 +221,8 @@ img {
   width: 100%;
   font-family: "Zalando Sans Expanded", var(--font-sans);
   font-weight: 300;
-  font-size: clamp(1.5rem, 0.9rem + 3vw, 2.75rem);
-  line-height: 1.2;
+  font-size: var(--hero-headline-size);
+  line-height: var(--hero-headline-line);
   letter-spacing: -0.02em;
   color: var(--color-text);
 }
@@ -684,6 +694,16 @@ img {
    Responsive
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
+  .page-header__name {
+    font-size: var(--hero-name-size-sm);
+    line-height: var(--hero-name-line-sm);
+  }
+
+  .page-header__headline {
+    font-size: var(--hero-headline-size-sm);
+    line-height: var(--hero-headline-line-sm);
+  }
+
   .site-nav__masthead {
     padding: 0 var(--space-4);
   }
