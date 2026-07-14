@@ -356,7 +356,7 @@ img {
 }
 
 .teaser__media {
-  height: 525px;
+  aspect-ratio: 933 / 525;
   flex: 933 1 0;
   position: relative;
   overflow: hidden;
@@ -540,7 +540,7 @@ img {
 }
 
 .list-teaser__media {
-  height: 191px;
+  aspect-ratio: 340 / 191;
   flex: 340 1 0;
   border-radius: 4px;
   position: relative;
@@ -684,6 +684,25 @@ img {
 /* --------------------------------------------------------------------------
    Responsive
    -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .teaser {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 32px;
+  }
+
+  .teaser__body {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .teaser__media {
+    order: -1;
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .about {
     grid-template-columns: 1fr;
@@ -692,6 +711,18 @@ img {
 
   .about__spacer {
     display: none;
+  }
+}
+
+@media (max-width: 756px) {
+  :root {
+    --nav-height: 84px;
+  }
+
+  .site-nav__logo,
+  .site-nav__logo img {
+    width: 56px;
+    height: 56px;
   }
 }
 
@@ -718,22 +749,6 @@ img {
 
   .page {
     padding: var(--nav-height) var(--space-4) 0;
-  }
-
-  .teaser {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .teaser__body {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-
-  .teaser__media {
-    flex: 0 0 auto;
-    width: 100%;
-    height: 320px;
   }
 
   .job {
