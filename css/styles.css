@@ -413,10 +413,52 @@ img {
   gap: 16px;
 }
 
-.teaser__pager img {
+.teaser__pager-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.teaser__pager-btn svg {
   width: 36px;
   height: 36px;
   display: block;
+}
+
+.teaser__pager-btn__bg {
+  fill: #2f2f2f;
+  fill-opacity: 0.75;
+  transition: fill-opacity var(--transition-fast);
+}
+
+.teaser__pager-btn__ring {
+  stroke: #ffffff;
+  stroke-opacity: 0.45;
+  transition: stroke-opacity var(--transition-fast);
+}
+
+.teaser__pager-btn__glyph {
+  fill: #ffffff;
+}
+
+.teaser__pager-btn:hover .teaser__pager-btn__bg {
+  fill-opacity: 0.9;
+}
+
+.teaser__pager-btn:hover .teaser__pager-btn__ring {
+  stroke-opacity: 0.65;
+}
+
+.teaser__pager-btn:active .teaser__pager-btn__bg {
+  fill-opacity: 1;
+}
+
+.teaser__pager-btn:active .teaser__pager-btn__ring {
+  stroke-opacity: 0.85;
 }
 
 /* --------------------------------------------------------------------------
