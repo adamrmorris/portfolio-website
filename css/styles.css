@@ -410,14 +410,14 @@ img {
 }
 
 .teaser__btn__bg {
-  fill: #5c5c5c;
+  fill: #2f2f2f;
   fill-opacity: 0.75;
   transition: fill-opacity var(--transition-fast);
 }
 
 .teaser__btn__ring {
-  stroke: #a8a8a8;
-  stroke-width: 2;
+  stroke: #ffffff;
+  stroke-width: 1;
   stroke-opacity: 0.45;
   transition: stroke-opacity var(--transition-fast);
 }
