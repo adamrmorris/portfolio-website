@@ -311,6 +311,15 @@ img {
   color: var(--color-text-muted);
 }
 
+.teaser-heading__sub-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.teaser-heading__sub-link:hover {
+  text-decoration: underline;
+}
+
 .teaser__desc {
   margin: 0;
   font-family: var(--font-sans);
@@ -475,6 +484,15 @@ img {
   text-transform: uppercase;
 }
 
+.job__org a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.job__org a:hover {
+  text-decoration: underline;
+}
+
 .job__dates {
   margin: 0;
   font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -546,6 +564,18 @@ img {
   position: relative;
   overflow: hidden;
   background: #fff;
+}
+
+a.list-teaser__media {
+  display: block;
+}
+
+a.list-teaser__media .list-teaser__img {
+  transition: opacity var(--transition-fast);
+}
+
+a.list-teaser__media:hover .list-teaser__img {
+  opacity: 0.9;
 }
 
 .list-teaser__media--black {
@@ -724,9 +754,7 @@ img {
     width: 56px;
     height: 56px;
   }
-}
 
-@media (max-width: 480px) {
   .page-header__name {
     font-size: var(--hero-name-size-sm);
     line-height: var(--hero-name-line-sm);
@@ -736,7 +764,9 @@ img {
     font-size: var(--hero-headline-size-sm);
     line-height: var(--hero-headline-line-sm);
   }
+}
 
+@media (max-width: 480px) {
   .site-nav__masthead {
     padding: 0 var(--space-4);
   }
