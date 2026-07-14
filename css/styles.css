@@ -365,14 +365,6 @@ img {
   background: #fff;
 }
 
-.teaser__media--pad32 .teaser__img {
-  position: absolute;
-  inset: 32px;
-  width: calc(100% - 64px);
-  height: calc(100% - 64px);
-  border-radius: 4px;
-}
-
 .teaser__media--red {
   background: #d03223;
   display: grid;
