@@ -386,6 +386,18 @@ img {
   display: block;
 }
 
+.teaser__img--slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.teaser__img--slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
 .teaser__btn {
   position: absolute;
   left: 16px;
@@ -409,6 +421,7 @@ img {
   position: absolute;
   right: 16px;
   bottom: 16px;
+  z-index: 2;
   display: flex;
   gap: 16px;
 }

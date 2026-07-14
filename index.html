@@ -168,14 +168,24 @@
               >READ MORE →</a
             >
           </div>
-          <div class="teaser__media">
+          <div class="teaser__media teaser__media--carousel" data-carousel>
             <img
-              class="teaser__img"
+              class="teaser__img teaser__img--slide is-active"
               src="assets/figma/work-3.png"
               alt=""
             />
+            <img
+              class="teaser__img teaser__img--slide"
+              src="assets/figma/work-3-2.png"
+              alt=""
+            />
+            <img
+              class="teaser__img teaser__img--slide"
+              src="assets/figma/work-3-3.png"
+              alt=""
+            />
             <div class="teaser__pager">
-              <button class="teaser__pager-btn teaser__pager-btn--prev" type="button" aria-label="Previous image">
+              <button class="teaser__pager-btn teaser__pager-btn--prev" type="button" aria-label="Previous image" data-carousel-prev>
                 <svg viewBox="0 0 36 36" aria-hidden="true">
                   <circle class="teaser__pager-btn__bg" cx="18" cy="18" r="18" />
                   <circle class="teaser__pager-btn__ring" cx="18" cy="18" r="17.5" fill="none" />
@@ -185,7 +195,7 @@
                   />
                 </svg>
               </button>
-              <button class="teaser__pager-btn teaser__pager-btn--next" type="button" aria-label="Next image">
+              <button class="teaser__pager-btn teaser__pager-btn--next" type="button" aria-label="Next image" data-carousel-next>
                 <svg viewBox="0 0 36 36" aria-hidden="true">
                   <circle class="teaser__pager-btn__bg" cx="18" cy="18" r="18" />
                   <circle class="teaser__pager-btn__ring" cx="18" cy="18" r="17.5" fill="none" />
@@ -548,6 +558,7 @@
       </section>
     </main>
 
+    <script src="assets/js/main.js" defer></script>
     <script>
       (function () {
         const nav = document.querySelector(".site-nav");
