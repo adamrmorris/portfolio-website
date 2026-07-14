@@ -365,11 +365,11 @@ img {
   background: #fff;
 }
 
-.teaser__media--pad32 {
-  padding: 32px;
-}
-
 .teaser__media--pad32 .teaser__img {
+  position: absolute;
+  inset: 32px;
+  width: calc(100% - 64px);
+  height: calc(100% - 64px);
   border-radius: 4px;
 }
 
