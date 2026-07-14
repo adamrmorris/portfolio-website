@@ -228,6 +228,7 @@ img {
    -------------------------------------------------------------------------- */
 .page-section {
   margin-top: 38px;
+  scroll-margin-top: calc(var(--nav-height) + 24px);
 }
 
 .page-section__header {
