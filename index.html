@@ -131,14 +131,28 @@
             </p>
             <p class="teaser__year">2025</p>
           </div>
-          <div class="teaser__media">
-            <img
+          <div class="teaser__media" data-video-teaser>
+            <video
               class="teaser__img"
-              src="assets/figma/work-2.png"
-              alt=""
-            />
-            <button class="teaser__btn" type="button" aria-label="Play">
-              <img src="assets/figma/icon-play.png" alt="" />
+              poster="assets/figma/work-2.png"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              data-video
+            >
+              <source src="assets/video/work-2-insider.mp4" type="video/mp4" />
+            </video>
+            <button class="teaser__btn" type="button" aria-label="Play video" data-video-toggle>
+              <svg viewBox="0 0 36 36" aria-hidden="true">
+                <circle class="teaser__btn__bg" cx="18" cy="18" r="18" />
+                <circle class="teaser__btn__ring" cx="18" cy="18" r="17" fill="none" />
+                <path
+                  class="teaser__btn__glyph"
+                  data-glyph
+                  d="M15.5 11.2C15.5 10.42 16.36 9.95 17.02 10.37L25.6 15.77C26.22 16.16 26.22 17.06 25.6 17.45L17.02 22.85C16.36 23.27 15.5 22.8 15.5 22.02V11.2Z"
+                />
+              </svg>
             </button>
           </div>
         </article>
@@ -226,10 +240,28 @@
             </p>
             <p class="teaser__year">2018</p>
           </div>
-          <div class="teaser__media">
-            <img class="teaser__img" src="assets/figma/work-4.png" alt="" />
-            <button class="teaser__btn" type="button" aria-label="Play">
-              <img src="assets/figma/icon-play.png" alt="" />
+          <div class="teaser__media" data-video-teaser>
+            <video
+              class="teaser__img"
+              poster="assets/figma/work-4.png"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              data-video
+            >
+              <source src="assets/video/work-4-platform.mp4" type="video/mp4" />
+            </video>
+            <button class="teaser__btn" type="button" aria-label="Play video" data-video-toggle>
+              <svg viewBox="0 0 36 36" aria-hidden="true">
+                <circle class="teaser__btn__bg" cx="18" cy="18" r="18" />
+                <circle class="teaser__btn__ring" cx="18" cy="18" r="17" fill="none" />
+                <path
+                  class="teaser__btn__glyph"
+                  data-glyph
+                  d="M15.5 11.2C15.5 10.42 16.36 9.95 17.02 10.37L25.6 15.77C26.22 16.16 26.22 17.06 25.6 17.45L17.02 22.85C16.36 23.27 15.5 22.8 15.5 22.02V11.2Z"
+                />
+              </svg>
             </button>
           </div>
         </article>

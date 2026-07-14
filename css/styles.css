@@ -398,15 +398,48 @@ img {
   height: 36px;
   padding: 0;
   border: 0;
-  border-radius: 0;
+  border-radius: 50%;
   background: transparent;
   cursor: pointer;
 }
 
-.teaser__btn img {
+.teaser__btn svg {
   width: 36px;
   height: 36px;
   display: block;
+}
+
+.teaser__btn__bg {
+  fill: #5c5c5c;
+  fill-opacity: 0.75;
+  transition: fill-opacity var(--transition-fast);
+}
+
+.teaser__btn__ring {
+  stroke: #a8a8a8;
+  stroke-width: 2;
+  stroke-opacity: 0.45;
+  transition: stroke-opacity var(--transition-fast);
+}
+
+.teaser__btn__glyph {
+  fill: #ffffff;
+}
+
+.teaser__btn:hover .teaser__btn__bg {
+  fill-opacity: 0.9;
+}
+
+.teaser__btn:hover .teaser__btn__ring {
+  stroke-opacity: 0.65;
+}
+
+.teaser__btn:active .teaser__btn__bg {
+  fill-opacity: 1;
+}
+
+.teaser__btn:active .teaser__btn__ring {
+  stroke-opacity: 0.85;
 }
 
 .teaser__pager {
@@ -642,8 +675,6 @@ img {
 .list-teaser__media--stack2 .stack__top {
   position: absolute;
   inset: 0;
-  transform: scale(2.07) translate(-0.8%, -17.6%);
-  transform-origin: center;
   object-fit: cover;
 }
 

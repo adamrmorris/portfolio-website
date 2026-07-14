@@ -1,2 +1,7 @@
 .DS_Store
 .claude/
+
+# Raw video sources — too large to commit, kept locally only.
+# Compressed versions used on the site live in assets/video/.
+assets/figma/insider port 16x9 white.mov
+assets/figma/the work portfolio cut.mp4
