@@ -843,6 +843,14 @@ img {
   }
 }
 
+@media (max-width: 640px) {
+  .teaser--bbc .teaser__overlay {
+    right: 16px;
+    bottom: 16px;
+    width: 140px;
+  }
+}
+
 @media (max-width: 756px) {
   :root {
     --nav-height: 84px;
