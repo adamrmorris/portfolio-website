@@ -9,6 +9,7 @@
   --color-accent: #2563eb;
   --color-accent-hover: #1d4ed8;
   --color-border: #e2e8f0;
+  --color-border-subtle: #f0f0f0;
   --color-hero-bg: #ffffff;
   --color-hero-text: #2f2f2f;
   --color-hero-muted: #595959;
@@ -238,6 +239,10 @@ img {
   flex-direction: column;
   gap: 8px;
   margin-bottom: 16px;
+}
+
+.page-section__header .rule {
+  background: var(--color-text-muted);
 }
 
 .page-section__kicker {
@@ -696,6 +701,85 @@ img {
   object-fit: cover;
 }
 
+/* Writing teasers (Figma "WRITING") */
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 16px 0 32px;
+}
+
+.writing-card {
+  position: relative;
+}
+
+.writing-card__media {
+  border-radius: 4px;
+  border: 1px solid var(--color-border-subtle);
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 16px;
+}
+
+.writing-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity var(--transition-fast);
+}
+
+.writing-card__title {
+  margin: 0 0 8px;
+  font-family: "Zalando Sans Expanded", var(--font-sans);
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: var(--color-text);
+}
+
+.writing-card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.writing-card:hover .writing-card__title {
+  text-decoration: underline;
+}
+
+.writing-card:hover .writing-card__img {
+  opacity: 0.9;
+}
+
+.writing-card__desc {
+  margin: 0 0 16px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--color-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.writing-card__meta {
+  margin: 0 0 32px;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.7px;
+  color: var(--color-text-muted);
+}
+
+.writing-cta {
+  margin-top: 0;
+}
+
 .contact-links {
   font-family: var(--font-sans);
   font-weight: 700;
@@ -813,6 +897,10 @@ img {
   .list-teaser__body {
     padding-top: 0;
   }
+
+  .writing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -840,6 +928,18 @@ img {
     order: -1;
     flex: 0 0 auto;
     width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .teaser--bbc .teaser__overlay {
+    right: 16px;
+    bottom: 16px;
+    width: 140px;
+  }
+
+  .writing-grid {
+    grid-template-columns: 1fr;
   }
 }
 
