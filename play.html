@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Play — experiments with AI from Adam Morris, designer, developer, and builder."
+    />
+    <meta name="theme-color" content="#0f172a" />
+
+    <meta property="og:title" content="Play — Adam Morris" />
+    <meta
+      property="og:description"
+      content="Experiments with AI from Adam Morris — designer, developer, and builder."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/play.html" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Play — Adam Morris" />
+    <meta
+      name="twitter:description"
+      content="Experiments with AI from Adam Morris — designer, developer, and builder."
+    />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <title>Play — Adam Morris</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-nav" aria-label="Primary">
+      <div class="site-nav__rule" aria-hidden="true"></div>
+      <div class="site-nav__spacer" aria-hidden="true"></div>
+      <nav class="site-nav__masthead">
+        <a class="site-nav__logo" href="index.html#top" aria-label="Home">
+          <img src="assets/nav-logo.svg" alt="" width="72" height="72" />
+        </a>
+        <ul class="site-nav__links">
+          <li><a href="index.html#work">WORK</a></li>
+          <li><a href="index.html#about">ABOUT</a></li>
+          <li><a href="play.html" aria-current="page">PLAY</a></li>
+          <li><a href="index.html#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="site-nav__spacer" aria-hidden="true"></div>
+      <div class="rule rule--thin site-nav__bottom-rule" aria-hidden="true"></div>
+    </header>
+
+    <main id="main" class="page" tabindex="-1">
+      <div id="top" class="page__top" aria-hidden="true"></div>
+
+      <section class="page-header page-header--play" aria-labelledby="hero-heading">
+        <div class="page-header__inner">
+          <div class="page-header__titleblock">
+            <h1 id="hero-heading" class="page-header__name play-title" aria-label="Play">
+              <span class="play-title__letters" aria-hidden="true"><span class="play-letter" data-letter>P</span><span class="play-letter" data-letter>l</span><span class="play-letter" data-letter>a</span><span class="play-letter" data-letter>y</span></span><button type="button" class="play-letter play-letter--symbol" id="playReset" data-letter aria-label="Replay animation">☟</button>
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiments" class="page-section" aria-labelledby="experiments-heading">
+        <header class="page-section__header">
+          <div class="rule rule--thin" aria-hidden="true"></div>
+          <h2 id="experiments-heading" class="page-section__kicker">EXPERIMENTS WITH AI</h2>
+        </header>
+
+        <article class="teaser teaser--single">
+          <div class="teaser__media teaser__media--black" data-video-teaser>
+            <video
+              class="teaser__img"
+              poster="assets/figma/gigtix.png"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              data-video
+            >
+              <source src="assets/video/gigtix.mp4" type="video/mp4" />
+            </video>
+            <button class="teaser__btn" type="button" aria-label="Play video" data-video-toggle>
+              <svg viewBox="0 0 36 36" aria-hidden="true">
+                <circle class="teaser__btn__bg" cx="18" cy="18" r="18" />
+                <circle class="teaser__btn__ring" cx="18" cy="18" r="17.5" fill="none" />
+                <path
+                  class="teaser__btn__glyph"
+                  data-glyph
+                  transform="translate(13.091 11.365) scale(0.8474)"
+                  d="M0 14.1152V1.54688C0 1.02539 0.134766 0.638672 0.404297 0.386719C0.673828 0.128906 0.993164 0 1.3623 0C1.69043 0 2.01562 0.09375 2.33789 0.28125L12.832 6.39844C13.2188 6.62695 13.5 6.84668 13.6758 7.05762C13.8574 7.26855 13.9482 7.52637 13.9482 7.83105C13.9482 8.12988 13.8574 8.3877 13.6758 8.60449C13.5 8.81543 13.2188 9.03223 12.832 9.25488L2.33789 15.3809C2.01562 15.5684 1.69043 15.6621 1.3623 15.6621C0.993164 15.6621 0.673828 15.5332 0.404297 15.2754C0.134766 15.0176 0 14.6309 0 14.1152Z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="teaser__body">
+            <div class="teaser__intro">
+              <hgroup class="teaser-heading">
+                <h3 class="teaser-heading__title">Gigtix</h3>
+                <p class="teaser-heading__sub">Ticket alerts for my favourite bands</p>
+              </hgroup>
+            </div>
+            <p class="teaser__desc">
+              A Ceefax-inspired email alert for upcoming ticket releases from my most listened to bands. It
+              pulls my top artists from Last.fm and cross-references them against the Ticketmaster API to
+              catch new UK tour dates.
+            </p>
+          </div>
+        </article>
+
+        <div class="rule rule--thin" aria-hidden="true"></div>
+
+        <article class="teaser teaser--single teaser--last">
+          <div class="teaser__media teaser__media--black" data-video-teaser>
+            <video
+              class="teaser__img"
+              poster="assets/figma/economise.png"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              data-video
+            >
+              <source src="assets/video/economise.mp4" type="video/mp4" />
+            </video>
+            <button class="teaser__btn" type="button" aria-label="Play video" data-video-toggle>
+              <svg viewBox="0 0 36 36" aria-hidden="true">
+                <circle class="teaser__btn__bg" cx="18" cy="18" r="18" />
+                <circle class="teaser__btn__ring" cx="18" cy="18" r="17.5" fill="none" />
+                <path
+                  class="teaser__btn__glyph"
+                  data-glyph
+                  transform="translate(13.091 11.365) scale(0.8474)"
+                  d="M0 14.1152V1.54688C0 1.02539 0.134766 0.638672 0.404297 0.386719C0.673828 0.128906 0.993164 0 1.3623 0C1.69043 0 2.01562 0.09375 2.33789 0.28125L12.832 6.39844C13.2188 6.62695 13.5 6.84668 13.6758 7.05762C13.8574 7.26855 13.9482 7.52637 13.9482 7.83105C13.9482 8.12988 13.8574 8.3877 13.6758 8.60449C13.5 8.81543 13.2188 9.03223 12.832 9.25488L2.33789 15.3809C2.01562 15.5684 1.69043 15.6621 1.3623 15.6621C0.993164 15.6621 0.673828 15.5332 0.404297 15.2754C0.134766 15.0176 0 14.6309 0 14.1152Z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="teaser__body">
+            <div class="teaser__intro">
+              <hgroup class="teaser-heading">
+                <h3 class="teaser-heading__title">Economise</h3>
+                <p class="teaser-heading__sub">First draft UX copy figma plugin</p>
+              </hgroup>
+            </div>
+            <p class="teaser__desc">
+              A Figma plugin that reviews UX copy inline: select a text layer, it sends the copy to the
+              Claude API with The Economist's content guides baked in and returns a rewrite you can accept
+              or discard. Built with TypeScript for the Figma sandbox, a HTML/JS panel for the UI and a
+              Cloudflare Worker proxy.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="page-section page-section--footer" aria-label="Footer">
+        <header class="page-section__header">
+          <div class="rule rule--thin" aria-hidden="true"></div>
+          <p class="page-section__kicker">DESIGNED BY HAND, BUILT WITH AI</p>
+        </header>
+      </section>
+    </main>
+
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/play.js" defer></script>
+    <script>
+      (function () {
+        const nav = document.querySelector(".site-nav");
+        if (!nav) return;
+
+        function update() {
+          nav.classList.toggle("is-scrolled", window.scrollY > 0);
+        }
+
+        window.addEventListener("scroll", update, { passive: true });
+        update();
+      })();
+    </script>
+  </body>
+</html>
