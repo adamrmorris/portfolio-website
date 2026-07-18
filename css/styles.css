@@ -227,6 +227,58 @@ img {
 }
 
 /* --------------------------------------------------------------------------
+   Play page
+   -------------------------------------------------------------------------- */
+.play-title__letters {
+  display: inline-block;
+}
+
+.play-letter {
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 120ms ease;
+  transform: translateY(0);
+}
+
+.play-letter--symbol {
+  margin-left: 0.16em;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.play-letter--symbol:hover,
+.play-letter--symbol:focus-visible {
+  color: var(--color-red);
+}
+
+.teaser.teaser--single {
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.teaser--single.teaser--last {
+  margin-bottom: 64px;
+}
+
+.teaser--single .teaser__media {
+  width: 100%;
+  max-width: 933px;
+  flex: none;
+}
+
+.teaser--single .teaser__body {
+  width: 100%;
+  max-width: 696px;
+  flex: none;
+}
+
+/* --------------------------------------------------------------------------
    Sections
    -------------------------------------------------------------------------- */
 .page-section {
@@ -376,6 +428,47 @@ img {
   background: #d03223;
   display: grid;
   place-items: center;
+}
+
+.teaser__media--red .teaser__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.teaser__media--espresso {
+  background: linear-gradient(to bottom, #223076, #5fc6a8);
+  display: grid;
+  place-items: center;
+}
+
+.teaser__media--espresso .teaser__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+[data-parallax] {
+  transform: scale(1.18);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-parallax] {
+    transform: none;
+  }
+}
+
+.teaser__media--black {
+  background: #000;
+}
+
+.teaser__media--black .teaser__img {
+  object-fit: contain;
 }
 
 .teaser__img {
@@ -878,6 +971,12 @@ img {
   color: var(--color-text);
 }
 
+.site-nav__links a[aria-current="page"] {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 /* --------------------------------------------------------------------------
    Responsive
    -------------------------------------------------------------------------- */
@@ -998,5 +1097,12 @@ img {
   .job__roles {
     flex: 0 0 auto;
     width: 100%;
+  }
+
+  .tweak-panel {
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    width: auto;
   }
 }

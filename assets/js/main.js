@@ -96,3 +96,41 @@ document.querySelectorAll('[data-video-teaser]').forEach((wrapper) => {
 
   observer.observe(video);
 });
+
+(function () {
+  const els = document.querySelectorAll('[data-parallax]');
+  if (!els.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const SCALE = 1.18;
+  const SAFETY = 0.85;
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    els.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const elementCenter = rect.top + rect.height / 2;
+      const totalDistance = (vh + rect.height) / 2;
+      let progress = (elementCenter - vh / 2) / totalDistance;
+      progress = Math.max(-1, Math.min(1, progress));
+
+      const maxShift = (rect.height * (SCALE - 1) * SAFETY) / 2;
+      const translateY = -progress * maxShift;
+
+      el.style.transform = `scale(${SCALE}) translateY(${translateY.toFixed(2)}px)`;
+    });
+  }
+
+  function onScrollOrResize() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  window.addEventListener('scroll', onScrollOrResize, { passive: true });
+  window.addEventListener('resize', onScrollOrResize, { passive: true });
+  update();
+})();
