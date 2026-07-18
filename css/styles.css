@@ -534,6 +534,11 @@ img {
   margin-bottom: 0;
 }
 
+.about__text a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .about__jobs {
   display: flex;
   flex-direction: column;
