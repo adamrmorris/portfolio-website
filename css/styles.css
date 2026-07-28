@@ -305,7 +305,7 @@ img {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.7px;
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 /* --------------------------------------------------------------------------
@@ -395,6 +395,7 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   align-self: flex-start;
   height: 44px;
   padding: 12px;
@@ -409,6 +410,13 @@ img {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.7px;
+}
+
+.teaser__cta-icon {
+  flex: none;
+  width: 11px;
+  height: 11px;
+  color: currentColor;
 }
 
 .teaser__cta:hover {
