@@ -471,6 +471,33 @@ img {
   }
 }
 
+.teaser__img-reveal {
+  --reveal-rise: 28px;
+  --reveal-duration: 0.75s;
+  --reveal-delay: 0.5s;
+  --reveal-ease: cubic-bezier(0.2, 0, 0, 1);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(var(--reveal-rise));
+  animation: teaserImgReveal var(--reveal-duration) var(--reveal-ease) var(--reveal-delay) forwards;
+}
+
+@keyframes teaserImgReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .teaser__img-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .teaser__media--black {
   background: #000;
 }
