@@ -3,3 +3,14 @@
 
 [build]
   publish = "."
+
+# Serve clean URLs: /play instead of /play.html, / instead of /index.html
+[[redirects]]
+  from = "/play.html"
+  to = "/play"
+  status = 301
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
