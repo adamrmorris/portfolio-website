@@ -10,8 +10,32 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
     slides[index].classList.add('is-active');
   };
 
-  prevBtn.addEventListener('click', () => show(index - 1));
-  nextBtn.addEventListener('click', () => show(index + 1));
+  const AUTOPLAY_DELAY = 4000;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let timer = null;
+  let inView = false;
+  let hovering = false;
+
+  const stop = () => {
+    clearInterval(timer);
+    timer = null;
+  };
+  const start = () => {
+    stop();
+    if (reduceMotion || !inView || hovering || document.hidden) return;
+    timer = setInterval(() => show(index + 1), AUTOPLAY_DELAY);
+  };
+
+  prevBtn.addEventListener('click', () => { show(index - 1); start(); });
+  nextBtn.addEventListener('click', () => { show(index + 1); start(); });
+
+  carousel.addEventListener('mouseenter', () => { hovering = true; stop(); });
+  carousel.addEventListener('mouseleave', () => { hovering = false; start(); });
+  document.addEventListener('visibilitychange', start);
+  new IntersectionObserver((entries) => {
+    inView = entries[0].isIntersecting;
+    start();
+  }, { threshold: 0.5 }).observe(carousel);
 
   const SWIPE_THRESHOLD = 40;
   let touchStartX = 0;
@@ -43,6 +67,7 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
     const deltaY = touch.clientY - touchStartY;
     if (Math.abs(deltaX) < SWIPE_THRESHOLD || Math.abs(deltaX) < Math.abs(deltaY)) return;
     show(deltaX < 0 ? index + 1 : index - 1);
+    start();
   });
 });
 
@@ -109,8 +134,22 @@ document.querySelectorAll('[data-video-teaser]').forEach((wrapper) => {
   function update() {
     ticking = false;
     els.forEach((el) => {
-      const rect = el.getBoundingClientRect();
       const vh = window.innerHeight;
+
+      if (el.dataset.parallax === 'tall') {
+        // Image overflows its frame: slide it through the overflow as the frame scrolls past
+        const frame = el.closest('.teaser__media').getBoundingClientRect();
+        const overflow = Math.max(0, el.offsetHeight - frame.height);
+        const travel = (vh + frame.height) / 2;
+        let p = (frame.top + frame.height / 2 - vh / 2) / travel;
+        p = Math.max(-1, Math.min(1, p));
+        // p = 1 (frame entering at bottom) shows top of image; p = -1 shows bottom
+        const y = -overflow * (1 - p) / 2;
+        el.style.transform = `translateY(${y.toFixed(2)}px)`;
+        return;
+      }
+
+      const rect = el.getBoundingClientRect();
       const elementCenter = rect.top + rect.height / 2;
       const totalDistance = (vh + rect.height) / 2;
       let progress = (elementCenter - vh / 2) / totalDistance;

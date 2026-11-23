@@ -471,9 +471,27 @@ img {
   will-change: transform;
 }
 
+/* Image taller than its frame: fill the width, let it travel vertically */
+.teaser__media--tall .teaser__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+[data-parallax="tall"] {
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-parallax] {
     transform: none;
+  }
+
+  .teaser__media--tall .teaser__img {
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
